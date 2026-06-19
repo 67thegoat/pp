@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="400" height="300" viewBox="0 0 400 300">
+  <rect width="400" height="300" fill="#f5e6f5"/>
+  <rect x="40" y="40" width="320" height="220" rx="20" fill="#ffffff" stroke="#b145b1" stroke-width="4"/>
+  <path d="M90 220 L160 150 L210 190 L260 120 L320 220" fill="none" stroke="#f7a600" stroke-width="8" stroke-linecap="round" stroke-linejoin="round"/>
+  <circle cx="140" cy="110" r="24" fill="#f7a600"/>
+  <text x="200" y="145" text-anchor="middle" font-family="Arial, sans-serif" font-size="24" font-weight="bold" fill="#5c0c5c">Gallery image</text>
+</svg>

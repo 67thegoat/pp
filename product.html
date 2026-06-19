@@ -1,0 +1,134 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <script src="https://analytics.ahrefs.com/analytics.js" data-key="CvoXUeCPFHfddLnfHsQl7g" async></script>
+<meta name = "description" content="FILTERS, HYDRAULIC HOSES, BEARINGS, ENGINE PARTS, BRAKE, GEARS PARTS, SEALS, O RINGS, PUMPS, TOOTH, UNDERCARRIAGE">
+  <meta name="keywords" content="earthmoving parts, OEM, aftermarket, excavator parts, FILTERS, HYDRAULIC HOSES, BEARINGS, ENGINE PARTS, BRAKE, GEARS PARTS, SEALS, O RINGS, PUMPS, TOOTH, UNDERCARRIAGE,  KOM India, PURPLE PANTHER">
+  <meta name="robots" content="index, follow">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>PURPLE PANTHER – EXPORTER OF EARTH MOVING PARTS</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header>
+   <div class="top-bar">
+	
+    </div> 
+	 <div class="header-bar">
+		<div class="logo-container">
+		<img src="images/pplogo.webp" alt="Left Logo" class="logo">
+		</div>
+
+		<div class="company-name">PURPLE PANTHER PVT LTD</div>
+
+		<div class="logo-container">
+		<img src="images/pplogo.webp" alt="Right Logo" class="logo">
+		</div>
+	</div>
+    <div class="intro-section">
+		<div class="intro-text">
+			<h1>KAIZEN OF MACHINES – EXPORTER OF EARTH MOVING PARTS</h1>
+			<p>TOUGH PARTS, FOR TOUGH JOBS</p>
+			</div>
+
+			<div class="intro-contact">
+			<div class="phone">📞 +91 7827020260</div>
+			<div class="email">✉️ contact@purplepanther.in</div>
+		</div>
+	</div>
+  </header>
+  
+  <main>
+  <section class="buttons">
+      <a href="index.html" class="btn">HOME</a>
+      <a href="imagegallery.html" class="btn">IMAGE GALLERY</a>
+      <a href="quote.html" class="btn">Ask for QUOTE</a>
+      <a href="about.html" class="btn">ABOUT US</a>
+      <a href="info.html" class="btn">ABOUT JCB parts</a>
+    </section>
+	
+	<div class="search-container">
+      <input type="text" id="searchInput" placeholder="Search for a product..." />
+    </div>
+	
+	 <div class="product-grid" id="productGrid">
+  <script>
+    const productNames = [
+      "AXLE", "BACKHOE", "BEARINGS", "BOLTS AND NUTS", "BRAKE", "BRONZE BRUSHES", "BRONZE BUSHES", "BUCKET",
+      "CABIN PARTS", "CABLES", "CAPS KNOB MOUNTING", "CIRCLIPS", "CUT BUSHES", "ELECTRICAL PARTS", "ENGINE PARTS",
+      "FILTERS", "FRONT GRILLS", "FUEL FILTER", "GAITERS", "GASKET", "GEARS PARTS", "GREASE GUN", "HYDRAULIC HOSES",
+      "HYDRAULIC PUMPS", "JOINT", "LIGHTS", "O RINGS", "PIVOT PINS", "PLATES", "PUMPS", "RIM", "RUBBER HOSE", "SEALS",
+      "SHIM WASHER", "STEEL BUSHES", "SWITCHES", "TOOTH", "TORQUE CONVERTOR", "TRANSMISSION", "UNDERCARRIAGE",
+      "VALVES", "WEAR PAD", "YOKES SHAFTS CROSSES"
+    ];
+
+    function sanitizeFilename(name) {
+      return name
+        .toLowerCase()
+        .replace(/[,\/&]/g, '')
+        .replace(/\s+/g, '-')
+        .replace(/-+/g, '-')
+        .trim();
+    }
+
+    function createPlaceholder(name) {
+      const label = (name || 'PRODUCT').toUpperCase().slice(0, 24);
+      const hash = [...label].reduce((sum, char) => sum + char.charCodeAt(0), 0);
+      const hue = hash % 360;
+      const colorA = `hsl(${hue} 60% 92%)`;
+      const colorB = `hsl(${(hue + 48) % 360} 60% 84%)`;
+      const svg = `
+        <svg xmlns="http://www.w3.org/2000/svg" width="400" height="260">
+          <defs>
+            <linearGradient id="g" x1="0%" y1="0%" x2="100%" y2="100%">
+              <stop offset="0%" stop-color="${colorA}"/>
+              <stop offset="100%" stop-color="${colorB}"/>
+            </linearGradient>
+          </defs>
+          <rect width="400" height="260" rx="24" fill="url(#g)"/>
+          <rect x="24" y="24" width="352" height="212" rx="20" fill="rgba(255,255,255,0.75)"/>
+          <text x="200" y="132" text-anchor="middle" font-family="Arial, sans-serif" font-size="24" font-weight="700" fill="#5c0c5c">${label}</text>
+          <text x="200" y="168" text-anchor="middle" font-family="Arial, sans-serif" font-size="16" fill="#8b2c8b">Image coming soon</text>
+        </svg>`;
+      return `data:image/svg+xml;charset=UTF-8,${encodeURIComponent(svg)}`;
+    }
+
+    const productGrid = document.getElementById('productGrid');
+    if (productGrid) {
+      productNames.forEach((name, index) => {
+        const fileName = sanitizeFilename(name) + ".webp";
+        const card = document.createElement('div');
+        card.className = 'product';
+        card.id = String(index);
+        card.innerHTML = `
+          <img src="images/${fileName}" alt="${name}" onerror="this.onerror=null;this.src='${createPlaceholder(name)}';">
+          <p id="productlabel">${name}</p>
+        `;
+        productGrid.appendChild(card);
+      });
+    }
+  </script>
+</div>
+	
+  </main>
+</div>
+
+
+  <footer class="site-footer">
+  <div class="footer-content">
+    <p class="footer-text">
+      <span class="highlighted">© KOM India</span> | Brand by Purple Panther Pvt Ltd
+    </p>
+    <div class="footer-logo">
+      <img src="images/kom-logo.webp" alt="Purple Panther Logo" />
+    </div>
+  </div>
+</footer>
+  
+   
+  <script src="https://purplepanther.in/script.js"></script>
+  </body>
+</html>
+

@@ -1,0 +1,195 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <script src="https://analytics.ahrefs.com/analytics.js" data-key="CvoXUeCPFHfddLnfHsQl7g" async></script>
+<meta name = "description" content="PURPLE PANTHER offers genuine, OEM, and aftermarket spare parts for earthmoving machines. Exporting globally with top-quality assurance.">
+  <meta name="keywords" content="earthmoving parts, OEM, aftermarket, excavator parts, bulldozer parts, JCB, Caterpillar, Tata Hitachi, Volvo, Komatsu,  KOM India, PURPLE PANTHER">
+  <meta name="robots" content="index, follow">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>PURPLE PANTHER – EXPORTER OF EARTH MOVING PARTS</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.19/css/intlTelInput.min.css"/>
+</head>
+<body>
+  <header>
+    <div class="top-bar">
+	
+    </div> 
+	 
+	<div class="header-bar">
+		<div class="logo-container">
+		<img src="images/pplogo.webp" alt="Left Logo" class="logo">
+		</div>
+
+		<div class="company-name">PURPLE PANTHER PVT LTD</div>
+
+		<div class="logo-container">
+		<img src="images/pplogo.webp" alt="Right Logo" class="logo">
+		</div>
+	</div>
+	<div class="intro-section">
+		<div class="intro-text">
+			<h1>KAIZEN OF MACHINES – EXPORTER OF EARTH MOVING PARTS</h1>
+			<p>TOUGH PARTS, FOR TOUGH JOBS</p>
+			</div>
+
+			<div class="intro-contact">
+			<div class="phone">📞 +91 7827020260</div>
+			<div class="email">✉️ contact@purplepanther.in</div>
+		</div>
+	</div>
+  </header>
+  
+  <main>
+  <section class="buttons">
+      <a href="index.html" class="btn">HOME</a>
+	  <a href="product.html" class="btn">PRODUCTS</a>
+      <a href="imagegallery.html" class="btn">IMAGE GALLERY</a>
+      <a href="about.html" class="btn">ABOUT US</a>
+      <a href="info.html" class="btn">ABOUT JCB parts</a>
+    </section>
+	<div id="quoteModal" class="modal">
+	<div class="modal-box">
+    <h2>Ask for a Quote</h2>
+	 <div id="thankyou-message" class="thank-you-message" style="display: none;">
+      <h3>Thank you!</h3>
+      <p>We have received your request. We will come back to you within 24 hours.</p>
+    </div>
+
+    <form id="quoteForm" method="POST" action="https://api.web3forms.com/submit">
+      <input type="hidden" name="access_key" value="0f8df7c5-5c0e-4d8e-97ed-18f3b311eb84" />
+      <input type="hidden" name="from_name" value="KOM India" />
+
+      <label>Name</label>
+      <input type="text" name="name" placeholder="Your Name *" required />
+	  
+	  <label>Company Name</label>
+	  <input type="text" name="company" placeholder="Company Name *" required />
+
+      <label>Email</label>
+      <input type="email" name="email" placeholder="Email *" required pattern="[^@\s]+@[^@\s]+\.[^@\s]+" />
+	  
+	  <label>Phone</label>
+	  <div class="phone-container">
+		<select id="countryCodeSelect" name="country_code">
+		<option value="">Loading country codes...</option>
+		</select>
+        
+      <input id="phone" name="phone" type="tel" placeholder="Phone *" required pattern="^\d{7,15}$"/>
+      </div>
+
+      <label>Product Name</label>
+      <input type="text" name="product" placeholder="e.g., Backhoe, Brake"  />
+
+      <label>Message</label>
+      <textarea name="message" rows="4" placeholder="Message (optional)" ></textarea>
+	  
+	
+
+      <button type="submit">Submit</button>
+    </form>
+  </div>
+  	<br/>
+
+</div>
+	
+	
+	 
+	
+  </main>
+</div>
+
+
+  <footer class="site-footer">
+  <div class="footer-content">
+    <p class="footer-text">
+      <span class="highlighted">© KOM India</span> | Brand by Purple Panther Pvt Ltd
+    </p>
+    <div class="footer-logo">
+      <img src="images/kom-logo.webp" alt="Purple Panther Logo" />
+    </div>
+  </div>
+</footer>
+   
+  <script src="script.js"></script>
+
+  <script>
+    const selectEl = document.getElementById('countryCodeSelect');
+    const defaultCountryName = "ARE";
+
+    // Static fallback list (a few examples — expand as needed)
+    const fallbackCountries = [
+      { name: "USA", dial_code: "+1" },
+      { name: "GBR", dial_code: "+44" },
+      { name: "IND", dial_code: "+91" },
+      { name: "AUS", dial_code: "+61" },
+      { name: "CAN", dial_code: "+1" },
+      { name: "ARE", dial_code: "+971" } // UAE
+    ];
+
+    function populateDropdown(countries) {
+      countries.sort((a, b) => a.name.localeCompare(b.name));
+      selectEl.innerHTML = '<option value="">Select country code</option>';
+
+      countries.forEach(country => {
+        if (country.dial_code) {
+          const option = document.createElement('option');
+          option.value = country.dial_code;
+          option.textContent = `${country.name} (${country.dial_code})`;
+
+          if (country.name === defaultCountryName) {
+            option.selected = true;
+          }
+
+          selectEl.appendChild(option);
+        }
+      });
+    }
+
+    // Try fetching from RESTCountries API
+    fetch('https://restcountries.com/v3.1/all')
+      .then(response => response.json())
+      .then(data => {
+        const countries = data.map(c => ({
+          name: c.cca3,
+          dial_code: c.idd.root ? c.idd.root + (c.idd.suffixes ? c.idd.suffixes[0] : "") : null
+        })).filter(c => c.dial_code);
+        populateDropdown(countries);
+      })
+      .catch(error => {
+        console.warn("Failed to fetch from API, using fallback.", error);
+        populateDropdown(fallbackCountries);
+      });
+	  
+  const form = document.getElementById('quoteForm');
+  const thankYou = document.getElementById('thankyou-message');
+
+  form.addEventListener('submit', async function (e) {
+    e.preventDefault();
+
+    const formData = new FormData(form);
+
+    const response = await fetch(form.action, {
+      method: form.method,
+      body: formData,
+      headers: {
+        Accept: "application/json"
+      }
+    });
+
+    if (response.ok) {
+      form.style.display = "none";
+      thankYou.style.display = "block";
+    } else {
+      alert("There was a problem submitting your form. Please try again.");
+    }
+  });
+	  
+  </script>
+
+  
+  </body>
+</html>
+
